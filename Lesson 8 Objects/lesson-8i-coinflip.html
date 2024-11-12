@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 8i Exercise</title>
+</head>
+<body>
+  <p>Lesson 8i Exercise Coin Flip</p>
+
+  <button onclick="
+    flipCoin('heads');
+  ">
+    heads
+  </button>
+
+  <button onclick="
+    flipCoin('tails');
+  ">
+    tails
+  </button>
+  
+  <script>
+    /*
+    let randomNumber = Math.random();
+    let result;
+
+    if (randomNumber < 0.5) 
+        result = 'heads';
+      else 
+        result = 'tails';
+
+    let guess = 'heads';
+
+    if (guess === result)
+        console.log('You win');
+      else
+        console.log('You lose');
+    */
+    /*
+    let randomNumber = Math.random();
+    let guess;
+    let result = randomNumber < 0.5 ? 'heads' : 'tails';
+    guess === result ? console.log('You win') : console.log('You lose');
+    */
+
+    const flipScore = JSON.parse(localStorage.getItem('flipScore')) || {
+      wins: 0,
+      losses: 0
+    };
+    console.log(flipScore);
+
+    function flipCoin(guess) {
+
+      let randomNumber = Math.random();
+      let result = randomNumber < 0.5 ? 'heads' : 'tails';
+      
+      console.log(guess === result ? 'You win' : 'You lose');
+
+      guess === result ? console.log(`Wins: ${flipScore.wins += 1}`) : console.log(`Losses: ${flipScore.losses += 1}`);
+
+      localStorage.setItem('flipScore', JSON.stringify(flipScore));
+    }
+
+  </script>
+</body>
+</html>

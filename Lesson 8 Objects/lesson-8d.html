@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 8d Exercise</title>
+</head>
+<body>
+  <p>Lesson 8d Exercise</p>
+  
+  <script>
+    const product1 = {
+      name: 'Adidas singlet',
+      price: 899
+    };
+
+    const product2 = {
+      name: 'Everlast singlet',
+      price: 999
+    };
+
+    let cheaperProduct;
+
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price) {
+        cheaperProduct = product1;
+      } else {
+        cheaperProduct = product2;
+      }
+      return cheaperProduct;
+    }
+    cheaperProduct = comparePrice(product1, product2);
+
+    console.log(cheaperProduct);
+  </script>
+</body>
+</html>
