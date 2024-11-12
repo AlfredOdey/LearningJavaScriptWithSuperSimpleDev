@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <button onclick="
+      document.querySelector('.js-paragraphElement')
+      .innerHTML = `Cart quantity: ${cartQuantity}`;
+    ">
+    Show Quantity
+  </button>
+
+  <button onclick="
+    updateCartQuantity(1);
+    ">
+    Add to cart
+  </button>
+
+  <button onclick="
+    updateCartQuantity(2);
+    ">
+    +2
+  </button>
+
+  <button onclick="
+    updateCartQuantity(3);
+    ">
+    +3
+  </button>
+
+  <button onclick="
+    updateCartQuantity(4);
+    ">
+    +4
+  </button>
+
+  <button onclick="
+    updateCartQuantity(5);
+    ">
+    +5
+  </button>
+
+  <button onclick="
+    updateCartQuantity(-1);
+    ">
+    Remove from cart
+  </button>
+
+  <button onclick="
+    updateCartQuantity(-2);
+    ">
+    -2
+  </button>
+
+  <button onclick="
+    updateCartQuantity(-3);
+    ">
+    -3
+  </button>
+
+  <button onclick="
+    cartQuantity = 0;
+
+    localStorage.setItem('cartQuantity', cartQuantity);
+
+    document.querySelector('.js-paragraphElement')
+    .innerHTML = `Cart was reset.\nCart quantity: ${cartQuantity}`;
+    ">
+    Reset Cart
+  </button>
+
+  <p class="js-paragraphElement"></p>
+  
+  <script>
+    let cartQuantity = Number(localStorage.getItem('cartQuantity')) || 0;
+
+    document.querySelector('.js-paragraphElement')
+    .innerHTML = `Cart quantity: ${cartQuantity}`;
+    
+    function updateCartQuantity(quantity) {
+
+      if (cartQuantity + quantity > 10) {
+        alert('The cart is full!');
+        return;
+      }
+      
+      if (cartQuantity + quantity < 0) {
+        alert('Not enough items in cart.');
+        return;
+      }
+      
+      cartQuantity += quantity;
+      document.querySelector('.js-paragraphElement')
+        .innerHTML = `Cart quantity: ${cartQuantity}`;
+
+      localStorage.setItem('cartQuantity', cartQuantity);
+    
+    }
+  </script>
+</body>
+</html>

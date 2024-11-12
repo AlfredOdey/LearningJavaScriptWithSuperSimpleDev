@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 9 DOM Projects</title>
+  <title>Lesson 9g Exercise</title>
 </head>
 <body>
+  <p>Lesson 9g Exercise</p>
+
   <p>YouTube Subscribe Button</p>
   <button onclick="
     subscribe();
@@ -37,13 +39,13 @@
       const inputElement = document.querySelector('.js-cost-input');
       let cost = Number(inputElement.value);
 
-      if(cost < 40) {
-        cost += 10;
+      if(cost < 4000) {
+        cost += 1000;
 
       }
 
       document.querySelector('.js-total-cost')
-      .innerHTML = `$${cost}`;
+      .innerHTML = `$${cost / 100}`;
 
     }
 

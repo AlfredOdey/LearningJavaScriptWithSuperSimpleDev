@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 9d Exercise</title>
+</head>
+<body>
+  <p>Lesson 9d Exercise</p>
+
+  <input
+  oninput="
+    getCharacterCount();
+  "
+  onkeydown="
+    getInputValueOnKeydown(event);
+  "
+  type="text"
+  class="js-inputElement">
+  
+  <button
+    onclick="
+      getInputValue();
+    "
+    class="js-buttonElement">Submit</button>
+
+  <p class="js-paragraphElement"></p>
+  
+  <script>
+    const buttonElement = document.querySelector('.js-buttonElement');
+    const inputElement = document.querySelector('.js-inputElement');
+    const paragraphElement = document.querySelector('.js-paragraphElement');
+
+    function getCharacterCount() {
+      console.log(`Typing... ${inputElement.value.length}`);
+    }
+
+    function getInputValueOnKeydown(event) {
+      if (event.key === 'Enter') {
+        getInputValue();
+      }
+    }
+    
+    function getInputValue() {
+
+      paragraphElement.innerHTML = `
+      Your name is: ${inputElement.value}
+      `;
+    }
+
+  </script>
+</body>
+</html>
