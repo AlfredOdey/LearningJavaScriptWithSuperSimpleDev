@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 11 Arrays and Loops</title>
+</head>
+<body>
+  <p>Lesson 11 Arrays and Loops</p>
+  
+  <script>
+    const numbers = [10, 20, 30];
+    console.log(numbers);
+
+    console.log(numbers[1]);
+    numbers[0] = 5;
+    console.log(numbers);
+
+    const mixValues = [1, 'hello', true, {name: 'socks'}, [2, 3]];
+
+    console.log(typeof [2,3]);
+    console.log(Array.isArray([2,3]));
+
+    console.log(numbers.length);
+
+    numbers.push(40);
+    console.log(numbers);
+
+    const number = numbers.pop();
+    console.log(numbers);
+    console.log(number);
+
+    numbers.splice(0, 2);
+    console.log(numbers);
+
+  </script>
+</body>
+</html>
