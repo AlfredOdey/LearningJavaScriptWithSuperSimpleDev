@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12f Exercise</title>
+</head>
+<body>
+  <p>Lesson 12f Exercise</p>
+<!--12f-->
+  <button class="button" onclick="addToCart()" style="color: green">Add to cart</button>
+  <p class="paragraph"></p>
+
+  <script>
+    // 12f
+    let timeoutId;
+    function addToCart(){
+
+      document.querySelector('.paragraph')
+      .innerHTML = 'Added';
+
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(()=>{
+        document.querySelector('.paragraph')
+        .innerHTML = '';
+      }, 2000);
+
+    }
+  </script>
+</body>
+</html>

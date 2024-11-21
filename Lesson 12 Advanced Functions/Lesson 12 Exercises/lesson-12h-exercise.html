@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12h Exercise</title>
+</head>
+<body>
+  <p>Lesson 12h Exercise</p>
+
+  <button class="js-add-button" onclick="varyMessage('add');">Add</button>
+  <button class="js-subtract-button" onclick="varyMessage('subtract');">Subtract</button>
+  
+  <script>
+    let messages = 0;
+  
+    function varyMessage(variable){
+      if(variable === 'add'){
+        messages++;
+      } else if (variable === 'subtract'){
+        messages--;
+      }
+      console.log(messages);
+
+    }
+
+    setInterval(function(){
+    
+      if(document.title === 'Lesson 12h Exercise'){
+        if(messages === 1) {
+          document.title = `(${messages}) New message`;
+        } else if (messages <= 0) {
+          document.title = 'App';
+        } else {
+          document.title = `(${messages}) New messages`;
+        }
+      } else {
+        document.title = 'Lesson 12h Exercise';
+      }
+      
+    }, 1000);
+  </script>
+</body>
+</html>

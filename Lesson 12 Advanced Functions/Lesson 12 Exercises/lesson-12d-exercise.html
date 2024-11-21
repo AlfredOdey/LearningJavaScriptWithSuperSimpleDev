@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12d and 12e Exercise</title>
+</head>
+<body>
+  <p>Lesson 12d and 12e Exercise</p>
+<!--12d-->
+  <button onclick="changeInnerText()" style="color: green">Start</button> <br><br>
+<!--12e-->
+  <button class="button" onclick="addToCart()" style="color: green">Add to cart</button>
+  <p class="paragraph"></p>
+
+  <script>
+    // 12d
+    function changeInnerText(){
+      document.querySelector('button')
+      .style.color = 'blue';
+      document.querySelector('button')
+      .innerHTML = 'Loading...';
+      setTimeout(()=>{
+        document.querySelector('button')
+          .innerHTML = 'Finished!';
+        document.querySelector('button')
+          .style.color = 'red';
+      }, 1000);
+    }
+
+    // 12e
+    function addToCart(){
+
+      document.querySelector('.paragraph')
+      .innerHTML = 'Added';
+
+      setTimeout(()=>{
+        document.querySelector('.paragraph')
+        .innerHTML = '';
+      }, 2000);
+
+    }
+  </script>
+</body>
+</html>
