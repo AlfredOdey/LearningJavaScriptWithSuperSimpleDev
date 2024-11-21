@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12 Exercise</title>
+</head>
+<body>
+  <p>Lesson 12 Exercise</p>
+<!--12c-->
+  <button onclick="changeInnerText()" style="color: green">Start</button>
+  
+  <script>
+    // 12a
+    const add = function(){
+      console.log(2 + 3);
+    }
+    add();
+    add();
+
+    // 12b
+    function runTwice(funct){
+      funct();
+      funct();
+    }
+    runTwice(function(){
+      console.log('12b');
+    });
+
+    runTwice(add);
+
+    // 12c
+    function changeInnerText(){
+      document.querySelector('button')
+      .style.color = 'blue';
+      setTimeout(()=>{
+        document.querySelector('button')
+          .innerHTML = 'Finished';
+        document.querySelector('button')
+          .style.color = 'red';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
