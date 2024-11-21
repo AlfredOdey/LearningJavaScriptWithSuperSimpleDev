@@ -26,9 +26,12 @@ function pickComputerMove() {
 let isAutoPlaying = false;
 
 let intervalId;
+
 function autoPlay(){
   if(!isAutoPlaying){
-    intervalId = setInterval(function(){
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Stop playing';
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
       isAutoPlaying = true;
@@ -37,8 +40,35 @@ function autoPlay(){
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Autoplay';
   }
 }
+
+document.querySelector('.js-rock-button')
+  .addEventListener('click', () => {
+    playGame('rock');
+  });
+
+document.querySelector('.js-paper-button')
+  .addEventListener('click', () => {
+    playGame('paper');
+  });
+
+document.querySelector('.js-scissors-button')
+  .addEventListener('click', () => {
+    playGame('scissors');
+  });
+
+document.body.addEventListener('keydown', (event) => {
+  if(event.key === 'r'){
+    playGame('rock');
+  } else if(event.key === 'p'){
+    playGame('paper');
+  } else if(event.key === 's'){
+    playGame('scissors');
+  }
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -110,5 +140,24 @@ Ties: ${rpsScore.ties}
 
 function updateGamesCount() {
   document.querySelector('.js-games-count')
-  .innerHTML = rpsScore.wins + rpsScore.losses + rpsScore.ties;
+  .innerHTML = `Games played: ${rpsScore.wins + rpsScore.losses + rpsScore.ties}`;
 }
+
+document.querySelector('.js-reset-score-button')
+  .addEventListener('click', () => {
+    rpsScore.wins = 0;
+    rpsScore.losses = 0;
+    rpsScore.ties = 0;
+
+    document.querySelector('.js-result')
+      .innerHTML = ``;
+
+    localStorage.removeItem('rpsScore');
+    updateScoreElement();
+    updateGamesCount();
+  });
+
+  document.querySelector('.js-auto-play-button')
+    .addEventListener('click', () => {
+      autoPlay();
+    });

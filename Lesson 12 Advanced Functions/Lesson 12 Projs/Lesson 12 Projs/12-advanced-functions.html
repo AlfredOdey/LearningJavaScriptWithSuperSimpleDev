@@ -7,8 +7,26 @@
 </head>
 <body>
   <p>Lesson 12 Advanced Functions</p>
+
+  <button class="js-button" onclick="">Click</button>
   
   <script>
+    /*
+    const buttonElement = document.querySelector('.js-button');
+    
+    const eventListener = () => {
+      console.log('clicked');
+    };
+    
+    buttonElement.addEventListener('click', eventListener);
+
+    buttonElement.removeEventListener('click', eventListener);
+
+    buttonElement.addEventListener('click', () => {
+      console.log('clicked duplicate');
+    });
+    */
+
     /*
     function greeting(){
       console.log('hello');
@@ -61,16 +79,54 @@
 
     */
 
+    /*
     [
       'make dinner',
       'wash dishes',
       'watch youtube'
-    ].forEach(function(value, index){
+    ].forEach((value, index)=>{
       if(value === 'wash dishes'){
         return;
       }
       console.log(index);
       console.log(value);
+    });
+
+    const regularFunction = function(param1, param2){
+      console.log('hi');
+      return 5;
+    };
+    regularFunction();
+
+    const arrowFunction = (param1, param2)=>{
+      console.log('hello');
+      return 5;
+    };
+    arrowFunction();
+
+    const oneParam = param => {
+      console.log(param + 1);
+    };
+    oneParam(2);
+
+    const oneLine = () => 2 + 3;
+    console.log(oneLine());
+
+    const object2 = {
+      method1: () => {
+        console.log('method one');
+      },
+      // or
+      method2(){
+        console.log('better method for objects');
+      }
+    }
+    object2.method1();
+    object2.method2();
+    */
+
+    [1,-3,5].filter((value, index)=>{
+      return true;
     });
   </script>
 </body>

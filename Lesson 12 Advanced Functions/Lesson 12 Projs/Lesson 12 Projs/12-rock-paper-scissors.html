@@ -9,24 +9,24 @@
 <body>
   <p class="title">Rock Paper Scissors</p>
 
-  <button class="css-move-button" onclick="
-    playGame('rock');
-    "><img class="css-move-icon" src="\icons\rock-emoji.png" alt="rock"></button>
+  <button class="css-move-button js-rock-button">
+    <img class="css-move-icon" src="\icons\rock-emoji.png" alt="rock">
+  </button>
 
-  <button class="css-move-button" onclick="
-    playGame('paper');
-    "><img class="css-move-icon" src="\icons\paper-emoji.png" alt="paper"></button>
+  <button class="css-move-button js-paper-button">
+    <img class="css-move-icon" src="\icons\paper-emoji.png" alt="paper">
+  </button>
 
-  <button class="css-move-button" onclick="
-    playGame('scissors');
-  "><img class="css-move-icon" src="\icons\scissors-emoji.png" alt="scissors"></button>
+  <button class="css-move-button js-scissors-button">
+    <img class="css-move-icon" src="\icons\scissors-emoji.png" alt="scissors">
+  </button>
 
   <p class="js-moves css-moves"></p>
   <p class="js-result css-result"></p>
   <p class="js-score css-score"></p>
   <p class="js-games-count css-games-count"></p>
 
-  <button class="reset-score-button" onclick="
+  <button class="reset-score-button js-reset-score-button" onclick="
     rpsScore.wins = 0;
     rpsScore.losses = 0;
     rpsScore.ties = 0;
@@ -41,7 +41,7 @@
     Reset Score
   </button>
 
-  <button class="auto-play-button" onclick="autoPlay();">Autoplay</button>
+  <button class="auto-play-button js-auto-play-button">Autoplay</button>
 
   <script src="12-rock-paper-scissors.js">
   </script>
