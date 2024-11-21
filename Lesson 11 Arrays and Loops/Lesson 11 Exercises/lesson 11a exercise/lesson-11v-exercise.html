@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 11v Exercise</title>
+</head>
+<body>
+  <p>Lesson 11v Exercise</p>
+  
+  <script>
+    for(let i = 1; i <= 20; i++){
+      let display;
+      if(i % 3 === 0 && i % 5 === 0){
+        display = 'FizzBuzz';
+      } else if(i % 3 === 0){
+        display = 'Fizz';
+      } else if(i % 5 === 0){
+        display = 'Buzz';
+      } else {
+        display = i;
+      }
+      console.log(display);
+    }
+  </script>
+</body>
+</html>
