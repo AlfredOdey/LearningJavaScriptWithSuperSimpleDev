@@ -8,14 +8,15 @@
 <body>
   <p>Lesson 12d and 12e Exercise</p>
 <!--12d-->
-  <button onclick="changeInnerText()" style="color: green">Start</button> <br><br>
+  <button style="color: green">Start</button> <br><br>
 <!--12e-->
-  <button class="button" onclick="addToCart()" style="color: green">Add to cart</button>
+  <button class="button" style="color: green">Add to cart</button>
   <p class="paragraph"></p>
 
   <script>
     // 12d
-    function changeInnerText(){
+    document.querySelector('button')
+      .addEventListener('click', ()=>{
       document.querySelector('button')
       .style.color = 'blue';
       document.querySelector('button')
@@ -26,10 +27,11 @@
         document.querySelector('button')
           .style.color = 'red';
       }, 1000);
-    }
+    });
 
     // 12e
-    function addToCart(){
+    document.querySelector('.button')
+      .addEventListener('click',()=>{
 
       document.querySelector('.paragraph')
       .innerHTML = 'Added';
@@ -39,7 +41,7 @@
         .innerHTML = '';
       }, 2000);
 
-    }
+    });
   </script>
 </body>
 </html>
